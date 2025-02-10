@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand img {
+  width: 130px;
+}
+
+.feature-item img {
+  width: 50px;
+  height: auto;
+}
+
+.main-header {
+  padding-top: 100px;
+}
+
+.subcribe {
+  background-image: url(./img/subscribe.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-icon {
+  width: 130px;
+}
+
+.copy-right {
+  color: white;
+  background-color: black;
+}
+
+.blur-filter {
+  backdrop-filter: blur(8px);
+  background-color: #ccc;
+}

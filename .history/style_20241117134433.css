@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-brand img {
+  width: 130px;
+}
+
+.feature-item img {
+  width: 50px;
+  height: auto;
+}
+
+.main-header {
+  padding-top: 105px;
+}
