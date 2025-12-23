@@ -14,6 +14,8 @@
       crossorigin="anonymous"
     />
 
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- My Style -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -139,7 +141,7 @@
         <div class="row align-items-center gap-x-md-5">
 
           <!-- Khối bên trái -->
-          <div class="col-md-6">
+          <div class="col-md-6" data-aos="fade-right">
             <h1 class="fs-3 fw-normal">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
               alias nulla minus sunt similique
@@ -153,7 +155,7 @@
 
             <a
               href="#!"
-              class="btn btn-success btn-sm d-inline-flex justify-content-center align-items-center me-2"
+              class="btn btn-primary-gradient btn-sm d-inline-flex justify-content-center align-items-center me-2"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 640 512"
@@ -174,7 +176,7 @@
           </div>
 
           <!-- Khối bên phải -->
-          <div class="col-md-6 mt-2 mt-md-0">
+          <div class="col-md-6 mt-2 mt-md-0" data-aos="fade-left">
             <div>
               <img
                 class="rounded w-100"
@@ -199,6 +201,7 @@
           <div class="col-md-4">
             <div
               class="feature-item bg-white border rounded p-3 d-flex align-items-center"
+              data-aos="fade-up" data-aos-delay="100"
             >
               <div>
                 <img src="./img/clock.png" alt="Clock" />
@@ -217,6 +220,7 @@
           <div class="col-md-4">
             <div
               class="feature-item bg-white border rounded p-3 d-flex align-items-center mt-2 mt-md-0"
+              data-aos="fade-up" data-aos-delay="200"
             >
               <div>
                 <img src="./img/responsive.png" alt="Clock" />
@@ -235,6 +239,7 @@
           <div class="col-md-4">
             <div
               class="feature-item bg-white border rounded p-3 d-flex align-items-center mt-2 mt-md-0"
+              data-aos="fade-up" data-aos-delay="300"
             >
               <div>
                 <img src="./img/tick.png" alt="Clock" />
@@ -274,7 +279,7 @@
 
               <a
                 href="#!"
-                class="btn btn-success btn-sm d-inline-flex justify-content-center align-items-center me-2"
+                class="btn btn-primary-gradient btn-sm d-inline-flex justify-content-center align-items-center me-2"
                 ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mortarboard-fill me-2" viewBox="0 0 16 16">
                   <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"></path>
                   <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"></path>
@@ -535,7 +540,7 @@
 
         <a
           href="#!"
-          class="btn btn-success btn-sm d-inline-flex justify-content-center align-items-center me-2"
+          class="btn btn-primary-gradient btn-sm d-inline-flex justify-content-center align-items-center me-2"
           ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2 bi bi-info-circle-fill" viewBox="0 0 16 16">
             <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
         </svg>
@@ -698,5 +703,7 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -15,6 +15,9 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!-- My Style -->
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- My Style -->
   <link rel="stylesheet" href="style.css" />
 
 </head>
@@ -56,7 +59,7 @@
 
         <!-- Btn dùng thẻ a để Đăng ký và Đăng nhập -->
         <div class="me-1 mb-2 mb-lg-0 d-flex flex-column gap-2 flex-md-row">
-          <a href="#!" class="btn btn-danger btn-sm d-inline-flex justify-content-center align-items-center me-2"><svg
+          <a href="#!" class="btn btn-primary-gradient btn-sm d-inline-flex justify-content-center align-items-center me-2"><svg
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="16px" heigth="16px" class="me-2">
               <!--Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
               <path fill="#ffffff"
@@ -107,7 +110,7 @@
       <div class="row align-items-center">
 
         <!-- Khối bên trái -->
-        <div class="col-md-6">
+        <div class="col-md-6" data-aos="fade-right">
 
           <div class="breadcrumb-holder">
 
@@ -153,7 +156,7 @@
         </div>
 
         <!-- Khối bên phải -->
-        <div class="col-md-6 mt-5 mt-md-0">
+        <div class="col-md-6 mt-5 mt-md-0" data-aos="fade-left">
           <div>
             <img class="rounded w-100" src="./img/main-header.jpg" alt="Main-header" />
           </div>
@@ -167,7 +170,7 @@
       <div class="row">
 
         <!-- Khối bên phải -->
-        <div class="col-md-8">
+        <div class="col-md-8" data-aos="fade-up">
 
           <!-- Item 1 -->
           <details class="card text-bg-light small mb-3">
@@ -238,7 +241,7 @@
           </details>
         </div>
         <!-- Khối bên trái -->
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
           <div class="card">
             <div class="card-header bg-primary text-white">
               Post your Questions
@@ -424,6 +427,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
