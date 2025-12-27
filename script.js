@@ -16,7 +16,12 @@ window.addEventListener("scroll", () => {
     navbar.classList.remove("border-bottom");
   } else {
     navbar.classList.remove("scrolled");
-    navbar.classList.add("bg-light");
+    if (!document.body.getAttribute("data-theme")) {
+      // Only add bg-light if not dark mode implicitly handled by CSS?
+      // Actually, let's better handle class manipulation or rely on CSS variables more.
+      // But to keep existing logic working:
+      navbar.classList.add("bg-light");
+    }
     navbar.classList.add("border-bottom");
   }
 });
@@ -150,3 +155,95 @@ if (pricingModal) {
     if (modalTitle) modalTitle.textContent = `${plan} Plan`;
   });
 }
+
+// --- NEW FEATURES ---
+
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const body = document.body;
+const icon = darkModeToggle?.querySelector("i");
+
+// Check Local Storage
+if (localStorage.getItem("theme") === "dark") {
+  body.setAttribute("data-theme", "dark");
+  if (icon) {
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+  }
+}
+
+if (darkModeToggle) {
+  darkModeToggle.addEventListener("click", () => {
+    if (body.getAttribute("data-theme") === "dark") {
+      body.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    } else {
+      body.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    }
+  });
+}
+
+// Color Theme Switcher
+const themeBtns = document.querySelectorAll(".theme-btn");
+const savedColor = localStorage.getItem("colorTheme");
+
+// Apply saved color
+if (savedColor) {
+  document.body.setAttribute("data-color", savedColor);
+}
+
+themeBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const color = btn.getAttribute("data-color");
+    document.body.setAttribute("data-color", color);
+    localStorage.setItem("colorTheme", color);
+  });
+});
+
+// Toast Notification
+const toastContainer = document.getElementById("toastContainer");
+
+function showToast(message, type = "success") {
+  if (!toastContainer) return;
+
+  const toastEl = document.createElement("div");
+  toastEl.className = `toast align-items-center text-white bg-${type} border-0 show`;
+  toastEl.setAttribute("role", "alert");
+  toastEl.setAttribute("aria-live", "assertive");
+  toastEl.setAttribute("aria-atomic", "true");
+
+  toastEl.innerHTML = `
+        <div class="d-flex">
+            <div class="toast-body">
+                ${message}
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    `;
+
+  toastContainer.appendChild(toastEl);
+
+  // Auto remove after 3s
+  setTimeout(() => {
+    toastEl.remove();
+  }, 3000);
+}
+
+// Newsletter Subscribe Trigger
+const subscribeForms = document.querySelectorAll('form[role="search"]'); // Assuming the search-like form is the subscribe one based on structure
+subscribeForms.forEach((form) => {
+  // Need to distinguish actual search from subscribe if they share selectors or generic structure
+  // The subscribe form has an email input
+  if (form.querySelector('input[type="email"]')) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      showToast("Subscribed successfully! 🚀");
+      form.reset();
+    });
+  }
+});
